@@ -3,19 +3,19 @@
 @import url('https://fonts.googleapis.com/css?family=Sarabun:300,300i,400,700');
 
 html {
-    background: darkturquoise;
+    background: white;
     min-width: 1280px;
     min-height: 720px;
     overflow: auto;
 
     font-family: "Sarabun", sans-serif;
     font-weight: 300;
-    color: white;
+    color: black;
     letter-spacing: 0.1em;
     font-size: 1000 px;
 }
 .svg_boxes {
-    background: beige;
+    background: white;
     display: block;
     width: 40%;
     height: 100%;
@@ -34,9 +34,10 @@ td, th {
 }
 h1{
     font-family: "Major Mono Display", sans-serif;
-    font-size: 3em;
+    font-size: 4.5em;
+    align-content: center;
 
-    color: white;
+    color: black;
     letter-spacing: normal;
     text-transform: lowercase;
 
@@ -57,7 +58,7 @@ div#div_page_desc {
 }
 
 div#div_data_desc {
-    background: beige;
+    background: white;
     box-sizing: border-box;
     padding: 10px 20px;
 
@@ -65,7 +66,7 @@ div#div_data_desc {
 }
 
 div#div_visuals {
-    background: beige;
+    background: white;
     background-clip: content-box;
     width: 100%;
     height: 100%;
@@ -76,17 +77,17 @@ div#div_visuals {
 
 div#div_buttons {
     padding: 20px;
+
 }
 
 button {
-    background: beige;
+    background: white;
     border: none;
-    height: 30px;
+    height: 50px;
     padding: 0px 10px;
 
     font-family: "Sarabun", sans-serif;
     font-weight: 400;
-    font-size: 1em;
     letter-spacing: 0.1em;
 }
 
@@ -107,9 +108,9 @@ thead {
 }
 
 #vis {
-    background: beige;
+    background: white;
     display: block;
-    width: 80%;
+    width: 75%;
     height: 100%;
     min-width: 800px;
     min-height: 500px;
@@ -119,13 +120,13 @@ thead {
 }
 
 #vis2 {
-    background: darkturquoise;
+    background: white;
 
     float: right;
 }
 
 #vis3 {
-    background: beige;
+    background: white;
     display: block;
     width: 90%;
     height: 100%;
@@ -135,14 +136,15 @@ thead {
     margin: auto;
 }
 #button_eps {
-    background: beige;
-    font-size: medium;
+    background: darkturquoise;
+    font-size: 3em;
+
 ;
 }
 
 #button_fa {
-    background: beige;
-    font-size: medium;
+    background: darkturquoise;
+    font-size: 3em;
 }
 .domain,
 .tick,

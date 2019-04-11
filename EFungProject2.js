@@ -23,8 +23,15 @@ function reloadP2() {
 }
 function setup3() {
 
+
+    d3.select("#vis").append("h1")
+        .attr("text-anchor", "middle")
+        .attr("id", "h1start")
+        .style("font-size", "24px")
+        .text("Click a button to start the visualization");
+
     var dataset = [];
-    var cell;
+
     d3.csv('ForestAreaEdited.csv',function (d) {
 
         d.forEach(function(d) {
@@ -70,72 +77,15 @@ function setup3() {
             .text(function(d) {
                 return d;
             })
-            .on('mouseover', onMouseOver)
-            .on("mouseout", onMouseOut);
     })
 
-    cells.highlight = function(data, type){
+    console.log();
 
-        // cells.selectAll(text)
-        //     .filter(function (d) {
-        //     return d.Country == data.Country;
-        // })
-        //     .attr("r", 8);
-        // cells.selectAll("circle")
-        //     .filter(function (d) {
-        //         return d.Country != data.Country && !isNaN(d.EPS) && d.Year != 2018;
-        //     })
-        //     .style("opacity", 0.2);
-    };
 
-    cells.removeHighlight = function(data, type){
-        // cells.selectAll("circle")
-        //     .filter(function (d) {
-        //         return d.Country == data.Country;
-        //     })
-        //     .attr("r", 4.5);
-        // cells.selectAll("circle")
-        //     .filter(function (d) {
-        //         return d.Country != data.Country && !isNaN(d.EPS) && d.Year != 2018;
-        //     })
-        //     .style("opacity", 1);
-
-    };
-
-    cells.resetHighlights = function(){
-        // cells.selectAll("circle")
-        //     .attr("class", "default")
-        //     .attr("r", 4.5)
-        //     .style("opacity", 1);
-    }
-
-    function onMouseOver(data, type){
-        if (!type){
-            type = "default";
-        }
-        // don't change its class if the object is currently selected by a Brush
-        if (d3.select(this).attr("class") === "isBrushed"){
-            type = "isBrushed";
-        }
-
-        cells.highlight(data, type);
-    }
-
-    function onMouseOut(data, type){
-        if (!type){
-            type = "default";
-        }
-        // don't change its class if the object is currently selected by a Brush
-        if (d3.select(this).attr("class") === "isBrushed"){
-            type = "isBrushed";
-        }
-
-        cells.removeHighlight(data, type);
-    }
 
 }
 function setup2() {
-
+    d3.select("#h1start").remove();
     var enterGroup;
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -180,15 +130,17 @@ function setup2() {
         //         return {x: +d.Year, y: +d[series]};
         //     });
         // });
-        //var parseTime = d3.timeParse("%Y");
+        //var format = d3.time.format("%Y");
+        // format.parse("2011-01-01"); // returns a Date
+        // format(new Date(2011, 0, 1));
+        var parseTime = d3.time.format("%Y");
 
         data.forEach(function(d) {
             d.EPS = +d.EPS;
             d.ForestArea= +d.ForestArea;
-            d.Year = d.Year;
+            d.Year = parseTime(new Date(d.Year));//+d.Year;
             d.Country = d["Country"];
         });
-
 
         // Compute the scales’ domains.
         x.domain(d3.extent(data, function(d) { return d.Year; })).nice();
@@ -319,7 +271,7 @@ function setup2() {
     }
 }
 function setup() {
-
+    d3.select("#h1start").remove();
     var enterGroup;
 
 
@@ -366,11 +318,12 @@ function setup() {
         //     });
         // });
         //var parseTime = d3.timeParse("%Y");
+        var parseTime = d3.time.format("%Y");
 
         data.forEach(function(d) {
            d.EPS = +d.EPS;
            d.ForestArea= +d.ForestArea;
-           d.Year = d.Year;
+           d.Year = parseTime(new Date(d.Year));
            d.Country = d["Country"];
         });
 
