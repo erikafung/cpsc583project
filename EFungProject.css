@@ -14,18 +14,7 @@ html {
     letter-spacing: 0.1em;
     font-size: 1000 px;
 }
-.svg_boxes {
-    background: beige;
-    display: block;
-    width: 40%;
-    height: 100%;
-    min-width: 500px;
-    min-height: 500px;
-    /*box-sizing: border-box;*/
-    margin: auto;
-    float: left;
-    padding: 0px 25px;
-}
+
 body {
     padding: 20px;
 }
@@ -99,29 +88,27 @@ button:focus {
     outline: 0;
 }
 
-td {
-    font-size: medium;
-}
-thead {
-    font-size: medium;
-}
 
 #vis {
     background: beige;
     display: block;
-    width: 80%;
+    width: 90%;
     height: 100%;
     min-width: 800px;
     min-height: 500px;
     /*box-sizing: border-box;*/
     margin: auto;
-    float: left;
 }
 
 #vis2 {
-    background: darkturquoise;
-
-    float: right;
+    background: beige;
+    display: block;
+    width: 90%;
+    height: 100%;
+    min-width: 800px;
+    min-height: 500px;
+    /*box-sizing: border-box;*/
+    margin: auto;
 }
 
 #vis3 {
@@ -135,14 +122,11 @@ thead {
     margin: auto;
 }
 #button_eps {
-    background: beige;
-    font-size: medium;
-;
+    background: darkturquoise;
 }
 
 #button_fa {
-    background: beige;
-    font-size: medium;
+    background: darkturquoise;
 }
 .domain,
 .tick,
